@@ -66,6 +66,19 @@ echo "CUDA:   13.0 (backward compatible with RAPIDS cuda12.x containers)"
 echo "Arch:   $(uname -m) — requires arm64/aarch64 container variants"
 
 echo ""
+echo "=== deviceQuery Result ==="
+~/cuda-samples/Samples/1_Utilities/deviceQuery/build/deviceQuery | tail -3
+
+echo ""
+echo "=== Bandwidth Summary ==="
+echo "Missing: Test skipped since CUDA 13.0 Test utility was missing"
+# ~/cuda-samples/Samples/1_Utilities/bandwidthTest/build/bandwidthTest | grep -E "Bandwidth|Result"
+
+echo ""
+echo "=== p2pBandwidthLatencyTest Result ==="
+~/cuda-samples/Samples/5_Domain_Specific/p2pBandwidthLatencyTest/build/p2pBandwidthLatencyTest 
+
+echo ""
 echo "=============================================="
 echo " CUDA Verification Complete"
 echo "=============================================="

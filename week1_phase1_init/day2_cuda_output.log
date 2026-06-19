@@ -1,6 +1,6 @@
 ==============================================
  DGX Spark CUDA Verification
- Thu Jun 18 10:17:00 PM EDT 2026
+ Thu Jun 18 11:41:04 PM EDT 2026
 ==============================================
 
 === System Architecture ===
@@ -66,6 +66,51 @@ Host cuDNN check is skipped for this system.
 Driver: 580.159.03
 CUDA:   13.0 (backward compatible with RAPIDS cuda12.x containers)
 Arch:   aarch64 — requires arm64/aarch64 container variants
+
+=== deviceQuery Result ===
+
+deviceQuery, CUDA Driver = CUDART, CUDA Driver Version = 13.0, CUDA Runtime Version = 13.0, NumDevs = 1
+Result = PASS
+
+=== Bandwidth Summary ===
+Missing: Test skipped since CUDA 13.0 Test utility was missing
+
+=== p2pBandwidthLatencyTest Result ===
+[P2P (Peer-to-Peer) GPU Bandwidth Latency Test]
+Device: 0, NVIDIA GB10, pciBusID: 1, pciDeviceID: 0, pciDomainID:f
+
+***NOTE: In case a device doesn't have P2P access to other one, it falls back to normal memcopy procedure.
+So you can see lesser Bandwidth (GB/s) and unstable Latency (us) in those cases.
+
+P2P Connectivity Matrix
+     D\D     0
+     0	     1
+Unidirectional P2P=Disabled Bandwidth Matrix (GB/s)
+   D\D     0 
+     0 252.97 
+Unidirectional P2P=Enabled Bandwidth (P2P Writes) Matrix (GB/s)
+   D\D     0 
+     0 251.08 
+Bidirectional P2P=Disabled Bandwidth Matrix (GB/s)
+   D\D     0 
+     0 248.15 
+Bidirectional P2P=Enabled Bandwidth Matrix (GB/s)
+   D\D     0 
+     0 239.42 
+P2P=Disabled Latency Matrix (us)
+   GPU     0 
+     0   2.15 
+
+   CPU     0 
+     0   2.07 
+P2P=Enabled Latency (P2P Writes) Matrix (us)
+   GPU     0 
+     0   2.15 
+
+   CPU     0 
+     0   2.06 
+
+NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
 
 ==============================================
  CUDA Verification Complete
