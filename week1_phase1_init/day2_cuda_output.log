@@ -1,0 +1,72 @@
+==============================================
+ DGX Spark CUDA Verification
+ Thu Jun 18 10:17:00 PM EDT 2026
+==============================================
+
+=== System Architecture ===
+aarch64
+arm64
+
+=== OS Version ===
+Distributor ID:	Ubuntu
+Description:	Ubuntu 24.04.4 LTS
+Release:	24.04
+Codename:	noble
+
+=== NVIDIA Driver Version ===
+580.159.03
+
+=== CUDA Version (driver max supported) ===
+| NVIDIA-SMI 580.159.03             Driver Version: 580.159.03     CUDA Version: 13.0     |
+
+=== CUDA Compiler Version (nvcc) ===
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2025 NVIDIA Corporation
+Built on Wed_Aug_20_01:57:39_PM_PDT_2025
+Cuda compilation tools, release 13.0, V13.0.88
+Build cuda_13.0.r13.0/compiler.36424714_0
+
+=== CUDA Toolkit Location ===
+cuda
+cuda-13
+cuda-13.0
+
+=== GPU Details ===
+index, name, memory.total [MiB], compute_cap
+0, NVIDIA GB10, [N/A], 12.1
+
+=== GPU Count ===
+1
+
+=== GPU Topology ===
+	[4mGPU0	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	0-19	0		N/A
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+
+=== Docker Platform ===
+ Server Version: 29.2.1
+ OSType: linux
+ Architecture: aarch64
+
+=== cuDNN Status ===
+NOTE: cuDNN is NOT installed on the DGX Spark host OS — this is expected.
+cuDNN is bundled inside RAPIDS/NGC containers and accessed at runtime.
+Host cuDNN check is skipped for this system.
+
+=== RAPIDS Container Compatibility Check ===
+Driver: 580.159.03
+CUDA:   13.0 (backward compatible with RAPIDS cuda12.x containers)
+Arch:   aarch64 — requires arm64/aarch64 container variants
+
+==============================================
+ CUDA Verification Complete
+==============================================
