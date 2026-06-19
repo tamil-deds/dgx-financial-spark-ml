@@ -1,0 +1,17 @@
+=== Docker Version ===
+Docker version 29.2.1, build a5c7197
+=== nvidia-ctk Version ===
+NVIDIA Container Toolkit CLI version 1.19.1
+commit: 09ceee5dde66ba9ce25c7cc69b1ebd5e6e3266fa
+=== Runtime Config ===
+{
+    "runtimes": {
+        "nvidia": {
+            "args": [],
+            "path": "nvidia-container-runtime"
+        }
+    }
+}=== GPU Access Inside Container ===
+index, name, memory.total [MiB]
+0, NVIDIA GB10, [N/A]
+=== PASS: All GPUs accessible inside Docker ===
