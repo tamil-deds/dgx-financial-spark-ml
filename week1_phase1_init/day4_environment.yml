@@ -1,0 +1,61 @@
+# =============================================================
+# RAPIDS Conda Environment — DGX Spark (arm64 / aarch64)
+# Week 1, Day 4 — dgx-financial-spark-ml portfolio
+#
+# System notes:
+#   - Architecture: arm64 (Grace Hopper / DGX Spark)
+#   - Host CUDA: 13.0 (driver)
+#   - Container CUDA: 12.4 (backward compatible with 13.0 driver)
+#   - RAPIDS 25.02 is the pinned version for reproducibility
+#
+# Usage (inside RAPIDS container or with conda):
+#   conda env create -f day4_environment.yml
+#   conda activate sparkdgx
+#
+# Preferred runtime: NGC container (includes all RAPIDS + CUDA)
+#   docker run --rm --gpus all \
+#     -v $(pwd):/workspace \
+#     nvcr.io/nvidia/rapidsai/base:25.02-cuda12.4-py3.12 \
+#     bash
+# =============================================================
+
+name: sparkdgx
+
+channels:
+  - rapidsai
+  - conda-forge
+  - nvidia
+  - defaults
+
+dependencies:
+  # Core RAPIDS (pin to 25.02 for reproducibility)
+  - rapids=26.06
+
+  # Python runtime
+  - python=3.12
+
+  # CUDA version for conda packages (host driver 13.0 supports this)
+  - cuda-version=13
+
+  # Jupyter for interactive development
+  - jupyterlab>=4.0
+  - ipywidgets
+
+  # Data I/O — financial flat files
+  - pyarrow>=14.0        # Parquet read/write
+  - fastparquet          # Alternative Parquet engine
+  - python-snappy        # Snappy compression support
+
+  # Spark integration (Week 3+)
+  - pyspark>=3.5
+
+  # Utilities
+  - tqdm
+  - matplotlib
+  - seaborn
+
+  # pip-only packages
+  - pip:
+    - xgboost>=2.0       # GPU-accelerated gradient boosting (Week 5)
+    - findspark          # Locate Spark installation from Python
+
